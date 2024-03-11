@@ -2,36 +2,30 @@ package org.example;
 import java.util.Scanner;
 
 public class Habitats {
-    public Habitats() {
-        Scanner scanner = new Scanner(System.in);
-        String tipo;
-        String habitat;
+    double temperatura;
+    double humedad;
+    double area;
 
-        System.out.println("Ingrese el tipo de habitat: ");
-        tipo = scanner.nextLine();
 
-        switch (tipo) {
-            case "terrestre":
-                System.out.println("Habitat terrestre");
-                habitat = "terrestre";
-                break;
-            case "acuatico":
-                System.out.println("Habitat acuatico");
-                habitat = "acuatico";
-                break;
-            case "aereo":
-                System.out.println("Habitat aereo");
-                habitat = "aereo";
-                break;
-            default:
-                System.out.println("Habitat desconocido");
-                break;
-        }
+}
+class Acuatico extends Habitats {
+    public int Acuatico() {
+        Habitats acuatico = new Habitats();
+        System.out.println("Temperatura: " + acuatico.temperatura);
+        System.out.println("Humedad: " + acuatico.humedad);
+        System.out.println("Area: " + acuatico.area);
+        return 0;
+    }
+}
+
+class Terrestre extends Habitats {
+    public Terrestre() {
 
     }
+}
 
-    public int LmpiezaHabitat() {
+class Aereo extends Habitats {
+    public Aereo() {
 
-        return 0;
     }
 }
