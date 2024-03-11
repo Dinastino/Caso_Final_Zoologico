@@ -5,27 +5,26 @@ public class Habitats {
     double temperatura;
     double humedad;
     double area;
-
+    public Habitats() {
+        this.temperatura = temperatura;
+        this.humedad = humedad;
+        this.area = area;
+    }
+    public void mostrarHabitat() {
+        System.out.println("Temperatura: " + temperatura);
+        System.out.println("Humedad: " + humedad);
+        System.out.println("Area: " + area);
+    }
 
 }
 class Acuatico extends Habitats {
-    public int Acuatico() {
-        Habitats acuatico = new Habitats();
-        System.out.println("Temperatura: " + acuatico.temperatura);
-        System.out.println("Humedad: " + acuatico.humedad);
-        System.out.println("Area: " + acuatico.area);
-        return 0;
-    }
+
 }
 
 class Terrestre extends Habitats {
-    public Terrestre() {
 
-    }
 }
 
 class Aereo extends Habitats {
-    public Aereo() {
 
-    }
 }
