@@ -1,15 +1,21 @@
 package org.example;
+
 import java.util.Scanner;
 
 public class Habitats {
     double temperatura;
     double humedad;
     double area;
+
     public Habitats() {
+    }
+
+    public Habitats(double temperatura, double humedad, double area) {
         this.temperatura = temperatura;
         this.humedad = humedad;
         this.area = area;
     }
+
     public void mostrarHabitat() {
         System.out.println("Temperatura: " + temperatura);
         System.out.println("Humedad: " + humedad);
@@ -24,33 +30,41 @@ public class Habitats {
         double humedad = scanner.nextDouble();
         System.out.println("Ingrese el area del habitat: ");
         double area = scanner.nextDouble();
-        Habitats habitat = new Habitats();
-        habitat.temperatura = temperatura;
-        habitat.humedad = humedad;
-        habitat.area = area;
-        return habitat;
+        return new Habitats(temperatura, humedad, area);
     }
 
 }
-class Acuatico extends Habitats {
-    double nivelAgua;
+    class Acuatico extends Habitats {
+        double nivelAgua;
 
-    public Acuatico(double temperatura, double humedad, double area, double nivelAgua) {
-        super.crearHabitat();
-        this.nivelAgua = nivelAgua;
+        public Acuatico(double temperatura, double humedad, double area, double nivelAgua) {
+            super(temperatura, humedad, area);
+            this.nivelAgua = nivelAgua;
+        }
+
+        public void mostrarCondiciones() {
+            super.mostrarHabitat();
+            System.out.println("Nivel de agua: " + nivelAgua);
+        }
     }
 
+    class Terrestre extends Habitats {
+        public Terrestre(double temperatura, double humedad, double area) {
+            super(temperatura, humedad, area);
+        }
 
-    public void mostrarCondiciones() {
-        super.mostrarHabitat();
-        System.out.println("Nivel de agua: " + nivelAgua);
+        public void mostrarCondiciones() {
+            super.mostrarHabitat();
+        }
     }
-}
 
-class Terrestre extends Habitats {
+    class Aereo extends Habitats {
+        public Aereo(double temperatura, double humedad, double area) {
+            super(temperatura, humedad, area);
+            
+        }
 
-}
-
-class Aereo extends Habitats {
-
-}
+        public void mostrarCondiciones() {
+            super.mostrarHabitat();
+        }
+    }
